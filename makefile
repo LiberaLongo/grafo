@@ -23,7 +23,7 @@ COMPILE = $(CC) $(CFLAGS)
 HDR = $(H)DisegnabileI.hpp $(H)utils.hpp $(H)Punto.hpp $(H)Direzione.hpp
 #insieme di oggetti che vogliono essere lanciati (chiamati da main)
 OBJ = ListaParent.o Lista.o Punto.o ColoreRGB.o \
-	Nodo.o Arco.o Grafo.o main.o #Button.o
+	Nodo.o Arco.o Grafo.o main.o inputOutputGrafo.o window.o #Button.o
 # Controlli.o
 
 all: app
@@ -53,6 +53,12 @@ Arco.o: $(S)Arco.cpp $(H)Arco.hpp
 
 Grafo.o: $(S)Grafo.cpp $(H)Grafo.hpp
 	$(COMPILE) $(S)Grafo.cpp -o Grafo.o
+
+inputOutputGrafo.o: $(M)inputOutputGrafo.cpp $(H)inputOutputGrafo.hpp
+	$(COMPILE) $(M)inputOutputGrafo.cpp -o inputOutputGrafo.o
+
+window.o: $(M)window.cpp $(H)window.hpp
+	$(COMPILE) $(M)window.cpp -o window.o
 
 main.o: $(M)main.cpp
 	$(COMPILE) $(M)main.cpp -o main.o

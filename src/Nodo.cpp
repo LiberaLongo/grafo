@@ -67,14 +67,14 @@ ColoreRGB Nodo::getColore() {
 
 //stampa
 string Nodo::toString() {
-    string res = "Nodo " + this->name;
-    //res = res + ", id: " + to_string(this->id);
-    //res = res + ", disegnato nel punto" + this->centro.toString();
+    string res = "\nNodo " + this->name;
+    res = res + ", id: " + to_string(this->id);
+    res = res + ", disegnato nel punto" + this->centro.toString();
     //res = res + "colore " + this->colore.toString();
     return res;
 }
 void Nodo::print(void) {
-    cout << endl << this->toString();
+    cout << this->toString();
 }
 //per trovarlo in una lista
 bool Nodo::confronto(Nodo nodo) {

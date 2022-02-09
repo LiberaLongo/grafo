@@ -8,10 +8,10 @@ Grafo::Grafo(Lista<Nodo> nodi, Lista<Arco> archi){
 }
 //inserisci
 void Grafo::insertNodo(Nodo nodo) {
-	this->nodi.insert_head(nodo);
+	this->nodi.insert_tail(nodo);
 }
 void Grafo::insertArco(Arco arco) {
-	this->archi.insert_head(arco);
+	this->archi.insert_tail(arco);
 }
 //rimuove un nodo dalla lista dei nodi e lo restituisce, NULL altrimenti
 Nodo* Grafo::removeNodo(Nodo nodo) {

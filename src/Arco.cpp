@@ -31,12 +31,12 @@ Nodo* Arco::getNodoTO() {
 }
 //stampa
 string Arco::toString() {
-    string res = "Arco ( " + this->fromA->getName();
+    string res = "\nArco ( " + this->fromA->getName();
     res = res + " --> " + this->toB->getName() + " )";
     return res;
 }
 void Arco::print() {
-    cout << endl << this->toString();
+    cout << this->toString();
 }
 //per trovarlo in una lista
 bool Arco::confronto(Arco arco) {
@@ -67,23 +67,23 @@ void Arco::draw(sf::RenderWindow &window) {
     //spostala  posizione effettiva del centro
     linea.setPosition(this->toB->getX(), this->toB->getY());
 
-    //la punta della freccia
-    //crea una empty shape convex con 3 punti
-    sf::ConvexShape triangolo;
-    triangolo.setPointCount(3);
-    //definisci i punti rispetto a (0,0)
-    triangolo.setPoint(0, sf::Vector2f(x, y - size * 3));
-    triangolo.setPoint(1, sf::Vector2f(x - size, y + size));
-    triangolo.setPoint(2, sf::Vector2f(x + size, y + size));
-    //colore punta della freccia
-    triangolo.setFillColor(sf::Color::Black);
-    //ruota di angolo, PRIMA! della rotazione
-    triangolo.setRotation(angolo);
-    //spostala  posizione effettiva del centro
-    triangolo.setPosition(this->toB->getX() + size , this->toB->getY() + size);
+    // //la punta della freccia
+    // //crea una empty shape convex con 3 punti
+    // sf::ConvexShape triangolo;
+    // triangolo.setPointCount(3);
+    // //definisci i punti rispetto a (0,0)
+    // triangolo.setPoint(0, sf::Vector2f(x, y - size * 3));
+    // triangolo.setPoint(1, sf::Vector2f(x - size, y + size));
+    // triangolo.setPoint(2, sf::Vector2f(x + size, y + size));
+    // //colore punta della freccia
+    // triangolo.setFillColor(sf::Color::Black);
+    // //ruota di angolo, PRIMA! della rotazione
+    // triangolo.setRotation(angolo);
+    // //spostala  posizione effettiva del centro
+    // triangolo.setPosition(this->toB->getX() + size , this->toB->getY() + size);
 
     //disegna la linea
     window.draw(linea);
     //disegna la punta della freccia
-    window.draw(triangolo);
+    // window.draw(triangolo);
 }
