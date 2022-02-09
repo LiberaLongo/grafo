@@ -52,4 +52,6 @@ public:
     void draw(sf::RenderWindow &window);
 };
 
+Nodo inputNodo(string vettore[]);
+
 #endif

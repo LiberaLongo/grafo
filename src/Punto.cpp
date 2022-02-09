@@ -51,7 +51,7 @@ float Punto::getY(void)
 
 //stampa
 string Punto::toString() {
-    string res = "( " + to_string(this->x) + ", " + to_string(this->y) + " )";
+    string res = "( " + to_string(this->x) + " , " + to_string(this->y) + " )";
     return res;
 }
 void Punto::print(void)

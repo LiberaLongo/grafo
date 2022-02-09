@@ -40,7 +40,7 @@ struct Elem<Tipo> *Lista<Tipo>::search(Tipo v)
 template <typename Tipo>
 string Lista<Tipo>::toString(void)
 {
-	string res = "\nLista : [ ";
+	string res = "\nLista:[ ";
 	if (!(this->empty()))
 	{
 		//primo elemento utile non la sentinella

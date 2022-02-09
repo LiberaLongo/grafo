@@ -67,11 +67,26 @@ ColoreRGB Nodo::getColore() {
 
 //stampa
 string Nodo::toString() {
-    string res = "\nNodo " + this->name;
-    res = res + ", id: " + to_string(this->id);
-    res = res + ", disegnato nel punto" + this->centro.toString();
+    string res = "\nNodo: " + this->name;
+    res = res + " id: " + to_string(this->id);
+    res = res + " disegnato_nel_punto" + this->centro.toString();
     //res = res + "colore " + this->colore.toString();
     return res;
+}
+Nodo inputNodo(string vettore[]) {
+    //supponi di avere le parole scritte dal toString() in un vettore in cui ogni spazio è un separatore.
+    if(vettore[0] != "Nodo") cout << "errore nodo" << vettore[0];
+    if(vettore[2] != "id:") cout << "errore id";
+    if(vettore[4] != "disegnato_nel_punto(") cout << "errore disegnato_nel_punto(";
+    if(vettore[6] != ",") cout << "errore virgola";
+    if(vettore[8] != ")") cout << "errore chiusura parentesi";
+    string name = vettore[1];
+    int id = std::stoi(vettore[3]);
+    float x = std::stof(vettore[5]);
+    float y = std::stof(vettore[7]);
+    Nodo nodo = Nodo(name, Punto(x, y));
+    if(id != nodo.getID()) cout << "errore id creati sono diversi";
+    return nodo;
 }
 void Nodo::print(void) {
     cout << this->toString();

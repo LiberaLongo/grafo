@@ -35,6 +35,11 @@ string Arco::toString() {
     res = res + " --> " + this->toB->getName() + " )";
     return res;
 }
+Arco inputArco(string vettore[]) {
+    //supponi di avere le parole scritte dal toString() in un vettore in cui ogni spazio è un separatore.
+    Arco arco = Arco();
+    return arco;
+}
 void Arco::print() {
     cout << this->toString();
 }

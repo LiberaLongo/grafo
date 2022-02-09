@@ -2,8 +2,9 @@
 #define inputOutputGrafo_HPP
 
 #include "../header/Grafo.hpp"
+#include <fstream>
 
 Grafo inputGrafo(string fileName);
-bool outputGrafo(string fileName);
+void outputGrafo(string fileName, Grafo grafo);
 
 #endif

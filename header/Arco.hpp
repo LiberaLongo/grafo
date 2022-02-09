@@ -37,4 +37,6 @@ public:
 	void draw(sf::RenderWindow &window);
 };
 
+Arco inputArco(string vettore[]);
+
 #endif //ARCO_HPP
