@@ -10,16 +10,27 @@ using namespace std;
 
 class Arco {
 private:
-	int superiorCapacity;
+	int superiorCapacity = 0;
 	int flusso = 0;
 	Nodo *fromA;	//puntatore al nodo di partenza
 	Nodo *toB;		//puntatore al nodo di arrivo
 public:
+	//costruttori
+	Arco(Nodo *A, Nodo *B);
 	Arco(Nodo *A, Nodo *B, int superiorCapacity);
+	//distruttore
 	virtual ~Arco() {};
-	Nodo* getNodoFrom();
-	Nodo* getNodoTO();
-	string toString();
+	//setters e getters
+	void setCapacity(int capacity);
+	int getCapacity(void);
+	void setFlusso(int flusso);
+	int getFlusso(void);
+	Nodo* getNodoFrom(void);
+	Nodo* getNodoTO(void);
+	//stampa
+	string toString(void);
+	void print(void);
+	//disegna
 	void draw(sf::RenderWindow &window);
 };
 

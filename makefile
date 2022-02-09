@@ -12,7 +12,6 @@ LINK_SFML = $(SYSTEM) $(WINDOW) $(GRAFICS) $(NETWORK) $(AUDIO)
 H = ./header/
 M = ./main/
 S = ./src/
-U = ./utils/
 
 #comando per compilare
 CC = g++

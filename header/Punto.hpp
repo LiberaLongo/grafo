@@ -13,6 +13,8 @@ using namespace std;
 #include <cmath>
 //M_PI pigreco e M_E numero di eulero
 
+float angoloLibreria(float angolo);
+
 class Punto {
 private:
     float x = 0.f;

@@ -27,12 +27,20 @@ public:
     virtual ~Nodo() {};
     //getters senza setter
     string getName();
+    //setters e getters
     //stampa
     string toString(void);
     void print(void);
+    //size
+    void setSize(float size);
+    float getSize(void);
     //centro
+    void setX(float x);
+    void setY(float y);
     void setCentro(float x, float y);
-    Punto getCentro();
+    float getX(void);
+    float getY(void);
+    Punto getCentro(void);
     //colore
     void setColore(int red, int green, int blue);
     ColoreRGB getColore();

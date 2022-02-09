@@ -2,6 +2,7 @@
 
 int currentID = 0;
 
+//costruttori
 Nodo::Nodo(string name) {
     currentID ++;
     this->id = currentID;
@@ -20,23 +21,36 @@ Nodo::Nodo(string name, Punto p, ColoreRGB colore) {
     this->centro = p;
     this->colore = colore;
 }
+
+//getters senza setter
 string Nodo::getName() {
     return this->name;
 }
-string Nodo::toString() {
-    string res = "Nodo " + this->name + ", id: " + to_string(this->id);
-    res = res + ", disegnato nel punto" + this->centro.toString();
-    //res = res + "colore " + this->colore.toString();
-    return res;
+//setters e getters
+//size
+void Nodo::setSize(float size) {
+    this->size = size;
 }
-void Nodo::print(void) {
-    cout << endl << this->toString();
+float Nodo::getSize(void) {
+    return this->size;
 }
 //centro
+void Nodo::setX(float x) {
+    this->centro.setX(x);
+}
+void Nodo::setY(float y) {
+    this->centro.setY(y);
+}
 void Nodo::setCentro(float x, float y) {
     this->centro = Punto(x, y);
 }
-Punto Nodo::getCentro() {
+float Nodo::getX(void) {
+    return this->centro.getX();
+}
+float Nodo::getY(void) {
+    return this->centro.getY();
+}
+Punto Nodo::getCentro(void) {
     return this->centro;
 }
 //colore
@@ -45,6 +59,17 @@ void Nodo::setColore(int red, int green, int blue) {
 }
 ColoreRGB Nodo::getColore() {
     return this->colore;
+}
+
+//stampa
+string Nodo::toString() {
+    string res = "Nodo " + this->name + ", id: " + to_string(this->id);
+    res = res + ", disegnato nel punto" + this->centro.toString();
+    //res = res + "colore " + this->colore.toString();
+    return res;
+}
+void Nodo::print(void) {
+    cout << endl << this->toString();
 }
 //disegna
 void Nodo::draw(sf::RenderWindow &window) {
