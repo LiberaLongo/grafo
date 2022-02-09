@@ -31,7 +31,7 @@ Arco* Grafo::removeArco(Arco arco) {
 }
 //stampa
 string Grafo::toString(){
-	string res = "Grafo:";
+	string res = "Grafo:\n";
 	res = res + "Nodi: " + this->nodi.toString();
 	res = res + "Archi: " + this->archi.toString();
 	return res;
@@ -41,6 +41,6 @@ void Grafo::print(){
 }
 //disegna
 void Grafo::draw(sf::RenderWindow &window){
-	struct Elem<Nodo> *iterNodi;
-	struct Elem<Arco> *iterArchi;
+	this->archi.draw(window);
+	this->nodi.draw(window);
 }

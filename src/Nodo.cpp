@@ -90,9 +90,11 @@ void Nodo::draw(sf::RenderWindow &window) {
         std::cerr << "Error loading verdanab.ttf" << std::endl;
     }
     testo.setFont(Font);
-    testo.setCharacterSize(this->size / 5);
+    testo.setCharacterSize(this->size);
     testo.setString(this->name);
-    testo.setPosition( { this->centro.getX(), this->centro.getY() - this->size / 10 } );
+    float x_testo = this->centro.getX() - this->size / 2;
+    float y_testo = this->centro.getY() - this->size *2/3;
+    testo.setPosition( {x_testo, y_testo} );
     //cerchio
     float esterno = -(this->size / 5);
     sf::CircleShape cerchio(this->size);
@@ -104,6 +106,7 @@ void Nodo::draw(sf::RenderWindow &window) {
     //setta un bordo di 10 all'interno del cerchio
     cerchio.setOutlineThickness(esterno);
     //colore del bordo giallo
-    cerchio.setOutlineColor(sf::Color::Black);
+    cerchio.setOutlineColor(sf::Color::White);
     window.draw(cerchio);
+    window.draw(testo);
 }

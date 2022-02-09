@@ -17,7 +17,7 @@ private:
     string name = "nodo";
     Punto centro;
     float size = 50.f;
-    ColoreRGB colore;
+    ColoreRGB colore = ColoreRGB(0, 0, 0);
 public:
     //costruttori
     Nodo(); //non usare questo! il nodo è fasullo / non incrementa currentID, serve per lista!

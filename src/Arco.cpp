@@ -58,11 +58,10 @@ void Arco::draw(sf::RenderWindow &window) {
     float angolo = angoloLibreria(this->fromA->getCentro().calcolaAngolo(this->toB->getCentro()));
     //distanza tra i centri dei nodi
     float distanza = this->fromA->getCentro().distance(this->toB->getCentro());
-
     //la linea
     sf::RectangleShape linea(sf::Vector2f{ size / 5, distanza});
     //colore linea
-    linea.setFillColor(sf::Color::Black);
+    linea.setFillColor(sf::Color::White);
     //ruota di angolo, PRIMA! della rotazione
     linea.setRotation(angolo);
     //spostala  posizione effettiva del centro
@@ -81,7 +80,7 @@ void Arco::draw(sf::RenderWindow &window) {
     //ruota di angolo, PRIMA! della rotazione
     triangolo.setRotation(angolo);
     //spostala  posizione effettiva del centro
-    triangolo.setPosition(this->toB->getX(), this->toB->getY());
+    triangolo.setPosition(this->toB->getX() + size , this->toB->getY() + size);
 
     //disegna la linea
     window.draw(linea);
