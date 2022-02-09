@@ -26,6 +26,8 @@ public:
 	//inserimento
 	void insertNodo(Nodo nodo);
 	void insertArco(Arco arco);
+	//inserimento di un arco se idFrom e idTO vengono trovati entrambi come id di Nodi già presenti nel grafo.
+	void insertArco(int idFrom, int idTO);
 	//rimuove un nodo dalla lista dei nodi e lo restituisce, NULL altrimenti
 	Nodo* removeNodo(Nodo nodo);
 	//rimuove un arco dalla lista degli archi e lo restituisce, NULL altrimenti

@@ -75,7 +75,7 @@ string Nodo::toString() {
 }
 Nodo inputNodo(string vettore[]) {
     //supponi di avere le parole scritte dal toString() in un vettore in cui ogni spazio è un separatore.
-    if(vettore[0] != "Nodo") cout << "errore nodo" << vettore[0];
+    if(vettore[0] != "Nodo:") cout << "errore nodo" << vettore[0];
     if(vettore[2] != "id:") cout << "errore id";
     if(vettore[4] != "disegnato_nel_punto(") cout << "errore disegnato_nel_punto(";
     if(vettore[6] != ",") cout << "errore virgola";

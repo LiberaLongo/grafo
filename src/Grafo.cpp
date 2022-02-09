@@ -13,6 +13,10 @@ void Grafo::insertNodo(Nodo nodo) {
 void Grafo::insertArco(Arco arco) {
 	this->archi.insert_tail(arco);
 }
+//inserimento di un arco se idFrom e idTO vengono trovati entrambi come id di Nodi già presenti nel grafo.
+void Grafo::insertArco(int idFrom, int idTO) {
+	//TODO
+}
 //rimuove un nodo dalla lista dei nodi e lo restituisce, NULL altrimenti
 Nodo* Grafo::removeNodo(Nodo nodo) {
 	// struct Elem<Nodo> *pos = this->nodi.search(nodo);

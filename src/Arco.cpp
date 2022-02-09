@@ -31,14 +31,17 @@ Nodo* Arco::getNodoTO() {
 }
 //stampa
 string Arco::toString() {
-    string res = "\nArco ( " + this->fromA->getName();
-    res = res + " --> " + this->toB->getName() + " )";
+    string res = "\nArco:( " + to_string(this->fromA->getID());
+    res = res + " --> " + to_string(this->toB->getID()) + " )";
     return res;
 }
-Arco inputArco(string vettore[]) {
+void inputArco(string vettore[], int &idFrom, int &idTO) {
     //supponi di avere le parole scritte dal toString() in un vettore in cui ogni spazio è un separatore.
-    Arco arco = Arco();
-    return arco;
+    if(vettore[0] != "Arco:(") cout << "errore arco" << vettore[0];
+    if(vettore[2] != "-->") cout << "errore -->";
+    if(vettore[4] != ")") cout << "errore chiusura parentesi";
+    idFrom = std::stoi(vettore[1]);
+    idTO = std::stoi(vettore[3]);
 }
 void Arco::print() {
     cout << this->toString();
