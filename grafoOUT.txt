@@ -7,7 +7,7 @@ Nodo: C id: 3 disegnato_nel_punto( 300.000000 , 100.000000 ) -->
 Nodo: D id: 4 disegnato_nel_punto( 300.000000 , 300.000000 ) ]
 Archi: 
 Lista:[ 
-Arco:( 61 --> -1256687024 ) --> 
-Arco:( 26 --> -1256687024 ) --> 
-Arco:( 5 --> -1256687024 ) ]
+Arco:( 1 --> 2 ) --> 
+Arco:( 1 --> 3 ) --> 
+Arco:( 2 --> 3 ) ]
 

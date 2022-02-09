@@ -20,11 +20,12 @@ void Grafo::insertArco(int idFrom, int idTO) {
 		if(posFrom != nullptr && posTO != nullptr) {
 		Nodo nodoFrom = this->nodi.read(posFrom);
 		Nodo nodoTO = this->nodi.read(posTO);
-		// nodoFrom.print();
-		// nodoTO.print();
-		Arco nuovoArco = Arco(&nodoFrom, &nodoTO);
-		// nuovoArco.print();
+		nodoFrom.print();
+		nodoTO.print();
+		Arco nuovoArco = Arco(nodoFrom, nodoTO);
+		nuovoArco.print();
 		this->insertArco(nuovoArco);
+		this->archi.print();
 	} else cout << "qualcosa è andato storto nella ricerca dei nodi nella lista tramite id";
 }
 //rimuove un nodo dalla lista dei nodi e lo restituisce, NULL altrimenti

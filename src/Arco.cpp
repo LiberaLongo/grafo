@@ -1,11 +1,11 @@
 #include "../header/Arco.hpp"
 //costruttori
 Arco::Arco() {} //serve per lista!
-Arco::Arco(Nodo *A, Nodo *B) {
+Arco::Arco(Nodo A, Nodo B) {
 	this->fromA = A;
 	this->toB = B;
 }
-Arco::Arco(Nodo *A, Nodo *B, int superiorCapacity) {
+Arco::Arco(Nodo A, Nodo B, int superiorCapacity) {
 	this->fromA = A;
 	this->toB = B;
 	this->superiorCapacity = superiorCapacity;
@@ -25,16 +25,16 @@ void Arco::setFlusso(int flusso) {
 int Arco::getFlusso(void) {
 	return this->flusso;
 }
-Nodo* Arco::getNodoFrom() {
+Nodo Arco::getNodoFrom() {
 	return this->fromA;
 }
-Nodo* Arco::getNodoTO() {
+Nodo Arco::getNodoTO() {
 	return this->toB;
 }
 //stampa
 string Arco::toString() {
-	string res = "\nArco:( " + to_string(this->fromA->getID());
-	res = res + " --> " + to_string(this->toB->getID()) + " )";
+	string res = "\nArco:( " + to_string(this->fromA.getID());
+	res = res + " --> " + to_string(this->toB.getID()) + " )";
 	return res;
 }
 void inputArco(string vettore[], int &idFrom, int &idTO) {
@@ -51,9 +51,9 @@ void Arco::print() {
 //per trovarlo in una lista
 bool Arco::confronto(Arco arco) {
 	//se il primo nodo è uguale al primo nodo
-	bool first = this->fromA->getID() == arco.getNodoFrom()->getID();
+	bool first = this->fromA.getID() == arco.getNodoFrom().getID();
 	//se il secondo nodo è uguale al secondo nodo
-	bool second = this->fromA->getID() == arco.getNodoFrom()->getID();
+	bool second = this->fromA.getID() == arco.getNodoFrom().getID();
 	return first && second;
 	//Nota: getNodoFrom() e getNodoTO restituiscono un puntatore
 	//quindi non è possibile fare confronto chiamando Nodo.confronto()
@@ -63,11 +63,11 @@ bool Arco::confronto(Arco arco) {
 void Arco::draw(sf::RenderWindow &window) {
 	//centro iniziale della figura prima di fare setPosition
 	float x = 0.f, y = 0.f; //centro: (0,0)
-	float size = this->fromA->getSize();
+	float size = this->fromA.getSize();
 	//non so se calcola l'angolo bene...
-	float angolo = angoloLibreria(this->fromA->getCentro().calcolaAngolo(this->toB->getCentro()));
+	float angolo = angoloLibreria(this->fromA.getCentro().calcolaAngolo(this->toB.getCentro()));
 	//distanza tra i centri dei nodi
-	float distanza = this->fromA->getCentro().distance(this->toB->getCentro());
+	float distanza = this->fromA.getCentro().distance(this->toB.getCentro());
 	//la linea
 	sf::RectangleShape linea(sf::Vector2f{ size / 5, distanza});
 	//colore linea
@@ -75,7 +75,7 @@ void Arco::draw(sf::RenderWindow &window) {
 	//ruota di angolo, PRIMA! della rotazione
 	linea.setRotation(angolo);
 	//spostala  posizione effettiva del centro
-	linea.setPosition(this->toB->getX(), this->toB->getY());
+	linea.setPosition(this->toB.getX(), this->toB.getY());
 
 	// //la punta della freccia
 	// //crea una empty shape convex con 3 punti
@@ -90,7 +90,7 @@ void Arco::draw(sf::RenderWindow &window) {
 	// //ruota di angolo, PRIMA! della rotazione
 	// triangolo.setRotation(angolo);
 	// //spostala  posizione effettiva del centro
-	// triangolo.setPosition(this->toB->getX() + size , this->toB->getY() + size);
+	// triangolo.setPosition(this->toB.getX() + size , this->toB.getY() + size);
 
 	//disegna la linea
 	window.draw(linea);

@@ -12,13 +12,13 @@ class Arco {
 private:
 	int superiorCapacity = 0;
 	int flusso = 0;
-	Nodo *fromA;	//puntatore al nodo di partenza
-	Nodo *toB;		//puntatore al nodo di arrivo
+	Nodo fromA;	//puntatore al nodo di partenza
+	Nodo toB;		//puntatore al nodo di arrivo
 public:
 	//costruttori
 	Arco(); //serve per lista!
-	Arco(Nodo *A, Nodo *B);
-	Arco(Nodo *A, Nodo *B, int superiorCapacity);
+	Arco(Nodo A, Nodo B);
+	Arco(Nodo A, Nodo B, int superiorCapacity);
 	//distruttore
 	virtual ~Arco() {};
 	//getter fasullo (solo per fare searchID nella lista dei nodi del grafo) restituisce sempre -1
@@ -28,8 +28,8 @@ public:
 	int getCapacity(void);
 	void setFlusso(int flusso);
 	int getFlusso(void);
-	Nodo* getNodoFrom(void);
-	Nodo* getNodoTO(void);
+	Nodo getNodoFrom(void);
+	Nodo getNodoTO(void);
 	//stampa
 	string toString(void);
 	void print(void);
