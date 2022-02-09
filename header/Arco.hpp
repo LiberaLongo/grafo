@@ -21,6 +21,8 @@ public:
 	Arco(Nodo *A, Nodo *B, int superiorCapacity);
 	//distruttore
 	virtual ~Arco() {};
+	//getter fasullo (solo per fare searchID nella lista dei nodi del grafo) restituisce sempre -1
+	int getID();
 	//setters e getters
 	void setCapacity(int capacity);
 	int getCapacity(void);

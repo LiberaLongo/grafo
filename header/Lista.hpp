@@ -12,12 +12,13 @@ public:
 	Lista(void);
 	virtual ~Lista(void) {};
 
-    //cerca v scorrendo la lista
-    //override
+	//cerca v scorrendo la lista
+	//override
 	struct Elem<Tipo>* search(Tipo v);
+	struct Elem<Tipo>* searchID(int id);
 
 	//stampe
-    //override
+	//override
 	string toString(void);
 	void print(void);
 	

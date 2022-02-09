@@ -40,7 +40,8 @@ Grafo inputGrafo(string fileName) {
 		}
 		int idFrom, idTO;
 		inputArco(vettoreStringhe, idFrom, idTO);
-		cout << "id" << idFrom << idTO;
+		// cout << "id" << idFrom << idTO;
+		grafo.insertArco(idFrom, idTO);
 		fin >> lettura; //lettura di freccia o di parentesi quadra chiusa
 	}
 	cout << "\nfine lettura file\n";

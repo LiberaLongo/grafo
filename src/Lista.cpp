@@ -34,7 +34,28 @@ struct Elem<Tipo> *Lista<Tipo>::search(Tipo v)
 	}
 	return find;
 }
-
+template <typename Tipo>
+struct Elem<Tipo> *Lista<Tipo>::searchID(int id)
+{
+	struct Elem<Tipo> *find = nullptr;
+	if (!(this->empty()))
+	{
+		struct Elem<Tipo> *iter = this->head();
+		bool trovato = false;
+		//se non finita, oppure lo hai trovato
+		while (!(this->finished(iter)) || !trovato)
+		{
+			//se lo trovi
+			if (id == this->read(iter).getID()) //MODIFICATA!
+			{
+				find = iter;
+				trovato = true;
+			}
+			iter = this->next(iter);
+		}
+	}
+	return find;
+}
 //stampe
 //override
 template <typename Tipo>

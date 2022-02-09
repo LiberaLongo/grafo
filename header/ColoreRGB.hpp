@@ -13,35 +13,35 @@ using namespace std;
 class ColoreRGB
 {
 private:
-    //default bianco
-    int red = LUMUS_MAXIMA;
-    int green = LUMUS_MAXIMA;
-    int blue = LUMUS_MAXIMA;
+	//default bianco
+	int red = LUMUS_MAXIMA;
+	int green = LUMUS_MAXIMA;
+	int blue = LUMUS_MAXIMA;
 
 public:
-    //costruttore vuoto
-    ColoreRGB(void);
-    //costruttore completo
-    ColoreRGB(int red, int green, int blue);
-    //distruttore
-    virtual ~ColoreRGB(void) {};
+	//costruttore vuoto
+	ColoreRGB(void);
+	//costruttore completo
+	ColoreRGB(int red, int green, int blue);
+	//distruttore
+	virtual ~ColoreRGB(void) {};
 
-    //setters
-    void setRed(int red);
-    void setGreen(int green);
-    void setBlue(int blue);
-    void setRGB(int red, int green, int blue);
+	//setters
+	void setRed(int red);
+	void setGreen(int green);
+	void setBlue(int blue);
+	void setRGB(int red, int green, int blue);
 
-    //getters
-    int getRed(void);
-    int getGreen(void);
-    int getBlue(void);
+	//getters
+	int getRed(void);
+	int getGreen(void);
+	int getBlue(void);
 
-    //stampa
-    string toString(void);
-    void print(void);
+	//stampa
+	string toString(void);
+	void print(void);
 
-    sf::Color getColorLib(void);
+	sf::Color getColorLib(void);
 };
 
 #endif //COLORE_HPP

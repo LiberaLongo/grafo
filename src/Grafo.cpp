@@ -15,7 +15,17 @@ void Grafo::insertArco(Arco arco) {
 }
 //inserimento di un arco se idFrom e idTO vengono trovati entrambi come id di Nodi già presenti nel grafo.
 void Grafo::insertArco(int idFrom, int idTO) {
-	//TODO
+	struct Elem<Nodo> *posFrom = this->nodi.searchID(idFrom);
+	struct Elem<Nodo> *posTO = this->nodi.searchID(idTO);
+		if(posFrom != nullptr && posTO != nullptr) {
+		Nodo nodoFrom = this->nodi.read(posFrom);
+		Nodo nodoTO = this->nodi.read(posTO);
+		// nodoFrom.print();
+		// nodoTO.print();
+		Arco nuovoArco = Arco(&nodoFrom, &nodoTO);
+		// nuovoArco.print();
+		this->insertArco(nuovoArco);
+	} else cout << "qualcosa è andato storto nella ricerca dei nodi nella lista tramite id";
 }
 //rimuove un nodo dalla lista dei nodi e lo restituisce, NULL altrimenti
 Nodo* Grafo::removeNodo(Nodo nodo) {
