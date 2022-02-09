@@ -16,6 +16,7 @@ private:
 	Nodo *toB;		//puntatore al nodo di arrivo
 public:
 	//costruttori
+	Arco(); //serve per lista!
 	Arco(Nodo *A, Nodo *B);
 	Arco(Nodo *A, Nodo *B, int superiorCapacity);
 	//distruttore
@@ -30,6 +31,8 @@ public:
 	//stampa
 	string toString(void);
 	void print(void);
+	//per trovarlo in una lista
+	bool confronto(Arco arco);
 	//disegna
 	void draw(sf::RenderWindow &window);
 };

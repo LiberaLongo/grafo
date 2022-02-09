@@ -1,5 +1,4 @@
-#include "../header/Nodo.hpp"
-#include "../header/Arco.hpp"
+#include "../header/Grafo.hpp"
 
 int main() {
     float d1 = 50.f;
@@ -9,12 +8,13 @@ int main() {
     Nodo C = Nodo("C", Punto(d2, d1));
     Nodo D = Nodo("D", Punto(d2, d2));
     Arco AB = Arco(&A, &B);
-    //stampa
-    A.print();
-    B.print();
-    AB.print();
-    C.print();
-    D.print();
+    Grafo grafo = Grafo();
+    grafo.insertNodo(A);
+    grafo.insertNodo(B);
+    grafo.insertArco(AB);
+    grafo.insertNodo(C);
+    grafo.insertNodo(D);
+    grafo.print();
     cout << endl;
     return 0;
 }

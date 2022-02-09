@@ -1,5 +1,6 @@
 #include "../header/Arco.hpp"
 //costruttori
+Arco::Arco() {} //serve per lista!
 Arco::Arco(Nodo *A, Nodo *B) {
     this->fromA = A;
     this->toB = B;
@@ -30,12 +31,23 @@ Nodo* Arco::getNodoTO() {
 }
 //stampa
 string Arco::toString() {
-    string res = "Arco dal Nodo: " + this->fromA->getName();// + this->fromA->getCentro().toString();
-    res = res + " al Nodo: " + this->toB->getName();// + this->toB->getCentro().toString();
+    string res = "Arco ( " + this->fromA->getName();
+    res = res + " --> " + this->toB->getName() + " )";
     return res;
 }
 void Arco::print() {
     cout << endl << this->toString();
+}
+//per trovarlo in una lista
+bool Arco::confronto(Arco arco) {
+    //se il primo nodo è uguale al primo nodo
+    bool first = this->fromA->getID() == arco.getNodoFrom()->getID();
+    //se il secondo nodo è uguale al secondo nodo
+    bool second = this->fromA->getID() == arco.getNodoFrom()->getID();
+    return first && second;
+    //Nota: getNodoFrom() e getNodoTO restituiscono un puntatore
+    //quindi non è possibile fare confronto chiamando Nodo.confronto()
+    //perchè il compilatore si arrabbia
 }
 //disegna
 void Arco::draw(sf::RenderWindow &window) {

@@ -3,6 +3,7 @@
 int currentID = 0;
 
 //costruttori
+Nodo::Nodo() {} //non usare questo! il nodo è fasullo / non incrementa currentID, serve per lista!
 Nodo::Nodo(string name) {
     currentID ++;
     this->id = currentID;
@@ -25,6 +26,9 @@ Nodo::Nodo(string name, Punto p, ColoreRGB colore) {
 //getters senza setter
 string Nodo::getName() {
     return this->name;
+}
+int Nodo::getID() {
+    return this->id;
 }
 //setters e getters
 //size
@@ -63,13 +67,18 @@ ColoreRGB Nodo::getColore() {
 
 //stampa
 string Nodo::toString() {
-    string res = "Nodo " + this->name + ", id: " + to_string(this->id);
-    res = res + ", disegnato nel punto" + this->centro.toString();
+    string res = "Nodo " + this->name;
+    //res = res + ", id: " + to_string(this->id);
+    //res = res + ", disegnato nel punto" + this->centro.toString();
     //res = res + "colore " + this->colore.toString();
     return res;
 }
 void Nodo::print(void) {
     cout << endl << this->toString();
+}
+//per trovarlo in una lista
+bool Nodo::confronto(Nodo nodo) {
+    return this->id == nodo.getID();
 }
 //disegna
 void Nodo::draw(sf::RenderWindow &window) {

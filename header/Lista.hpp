@@ -18,6 +18,7 @@ public:
 
 	//stampe
     //override
+	string toString(void);
 	void print(void);
 	
 	//disegna elementi

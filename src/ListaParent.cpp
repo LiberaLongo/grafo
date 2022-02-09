@@ -171,9 +171,9 @@ struct Elem<Tipo> *ListaParent<Tipo>::search(Tipo v)
 
 //stampe
 template <typename Tipo>
-void ListaParent<Tipo>::print(void)
+string ListaParent<Tipo>::toString(void)
 {
-	cout << "ListaParent : [ ";
+	string res = "\nLista : [ ";
 	if (!(this->empty()))
 	{
 		//primo elemento utile non la sentinella
@@ -182,16 +182,21 @@ void ListaParent<Tipo>::print(void)
 		while (!(this->finished(iter)))
 		{
 			//stampo elemento
-			cout << this->read(iter);
+			res = res + this->read(iter);
 			//passo al successivo e stampo freccia
 			iter = this->next(iter);
 			if (!(this->finished(iter)))
-				cout << " --> ";
+				res = res + " --> ";
 		}
 	}
-	cout << " ]" << endl;
+	res = res + " ]\n";
+	return res;
 }
-
+template <typename Tipo>
+void ListaParent<Tipo>::print(void)
+{
+	cout << this->toString();
+}
 /*
 Nota1: funzioni ispirate al libro algorazmi (lol)
 Nota2: NON sappiamo giocare con i puntatori

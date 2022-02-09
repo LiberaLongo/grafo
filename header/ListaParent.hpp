@@ -63,6 +63,7 @@ public:
 	struct Elem<Tipo>* search(Tipo v);
 
 	//stampe
+	string toString(void);
 	void print(void);
 };
 

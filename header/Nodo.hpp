@@ -20,6 +20,7 @@ private:
     ColoreRGB colore;
 public:
     //costruttori
+    Nodo(); //non usare questo! il nodo è fasullo / non incrementa currentID, serve per lista!
     Nodo(string name);
     Nodo(string name, Punto p);
     Nodo(string name, Punto p, ColoreRGB color);
@@ -27,10 +28,8 @@ public:
     virtual ~Nodo() {};
     //getters senza setter
     string getName();
+    int getID();
     //setters e getters
-    //stampa
-    string toString(void);
-    void print(void);
     //size
     void setSize(float size);
     float getSize(void);
@@ -44,6 +43,11 @@ public:
     //colore
     void setColore(int red, int green, int blue);
     ColoreRGB getColore();
+    //stampa
+    string toString(void);
+    void print(void);
+    //per trovarlo in una lista
+    bool confronto(Nodo nodo);
     //disegna
     void draw(sf::RenderWindow &window);
 };

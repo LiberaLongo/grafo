@@ -38,9 +38,9 @@ struct Elem<Tipo> *Lista<Tipo>::search(Tipo v)
 //stampe
 //override
 template <typename Tipo>
-void Lista<Tipo>::print(void)
+string Lista<Tipo>::toString(void)
 {
-	cout << " : [ ";
+	string res = "\nLista : [ ";
 	if (!(this->empty()))
 	{
 		//primo elemento utile non la sentinella
@@ -48,15 +48,20 @@ void Lista<Tipo>::print(void)
 		//se non vuota e non finita
 		while (!(this->finished(iter)))
 		{
-			Tipo stampato = this->read(iter);
-			stampato.print();
+			//stampo elemento
+			res = res + this->read(iter).toString();
 			//passo al successivo e stampo freccia
 			iter = this->next(iter);
 			if (!(this->finished(iter)))
-				cout << " --> ";
+				res = res + " --> ";
 		}
 	}
-	cout << " ]" << endl;
+	res = res + " ]\n";
+	return res;
+}
+template <typename Tipo>
+void Lista<Tipo>::print(void) {
+	cout << endl << this->toString();
 }
 //disegna elementi
 template <typename Tipo>
