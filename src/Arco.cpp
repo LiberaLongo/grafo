@@ -77,23 +77,27 @@ void Arco::draw(sf::RenderWindow &window) {
 	//spostala  posizione effettiva del centro
 	linea.setPosition(this->toB.getX(), this->toB.getY());
 
-	// //la punta della freccia
-	// //crea una empty shape convex con 3 punti
-	// sf::ConvexShape triangolo;
-	// triangolo.setPointCount(3);
-	// //definisci i punti rispetto a (0,0)
-	// triangolo.setPoint(0, sf::Vector2f(x, y - size * 3));
-	// triangolo.setPoint(1, sf::Vector2f(x - size, y + size));
-	// triangolo.setPoint(2, sf::Vector2f(x + size, y + size));
-	// //colore punta della freccia
-	// triangolo.setFillColor(sf::Color::Black);
-	// //ruota di angolo, PRIMA! della rotazione
-	// triangolo.setRotation(angolo);
-	// //spostala  posizione effettiva del centro
-	// triangolo.setPosition(this->toB.getX() + size , this->toB.getY() + size);
+	//la punta della freccia
+	//crea una empty shape convex con 3 punti
+	size = size /3;
+	sf::ConvexShape triangolo;
+	triangolo.setPointCount(3);
+	//definisci i punti rispetto a (0,0)
+	triangolo.setPoint(0, sf::Vector2f(x, y - size * 3));
+	triangolo.setPoint(1, sf::Vector2f(x - size, y + size));
+	triangolo.setPoint(2, sf::Vector2f(x + size, y + size));
+	//colore punta della freccia
+	triangolo.setFillColor(sf::Color::Red);
+	//ruota di angolo, PRIMA! della rotazione
+	triangolo.setRotation(angolo);
+	//spostala  posizione effettiva del centro
+	float x_freccia = ( this->toB.getX() - this->fromA.getX() ) /2 + this->fromA.getX();
+	float y_freccia = ( this->toB.getY() - this->fromA.getY() ) /2 + this->fromA.getY();
+	//cout << "x_freccia " << x_freccia << " y_freccia " << y_freccia << endl;
+	triangolo.setPosition(x_freccia, y_freccia);
 
 	//disegna la linea
 	window.draw(linea);
 	//disegna la punta della freccia
-	// window.draw(triangolo);
+	window.draw(triangolo);
 }
