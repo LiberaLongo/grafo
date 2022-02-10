@@ -69,9 +69,9 @@ void Arco::draw(sf::RenderWindow &window) {
 	//distanza tra i centri dei nodi
 	float distanza = this->fromA.getCentro().distance(this->toB.getCentro());
 	//la linea
-	sf::RectangleShape linea(sf::Vector2f{ size / 5, distanza});
+	sf::RectangleShape linea(sf::Vector2f{ size/5, distanza } );
 	//colore linea
-	linea.setFillColor(sf::Color::White);
+	linea.setFillColor(sf::Color::Blue);
 	//ruota di angolo, PRIMA! della rotazione
 	linea.setRotation(angolo);
 	//spostala  posizione effettiva del centro
@@ -90,9 +90,27 @@ void Arco::draw(sf::RenderWindow &window) {
 	triangolo.setFillColor(sf::Color::Red);
 	//ruota di angolo, PRIMA! della rotazione
 	triangolo.setRotation(angolo);
-	//spostala  posizione effettiva del centro
-	float x_freccia = ( this->toB.getX() - this->fromA.getX() ) /2 + this->fromA.getX();
-	float y_freccia = ( this->toB.getY() - this->fromA.getY() ) /2 + this->fromA.getY();
+	//spostala nella posizione desiderata
+	float x_a = this->fromA.getX(), y_a = this->fromA.getY();
+	float x_b = this->toB.getX(), y_b = this->toB.getY();
+	float r = distanza - this->fromA.getSize() * 2 ;
+	float x_freccia, y_freccia;
+	bool ok_to_divide = true;
+	if(x_a == x_b) {
+		x_freccia = x_a;
+		if(y_a < y_b) y_freccia = y_a + r;
+		ok_to_divide = false;
+	}
+	if(y_a == y_b) {
+		y_freccia = y_a;
+		if(x_a < x_b) x_freccia = x_a + r;
+		ok_to_divide = false;
+	}
+	if(ok_to_divide) {
+		//i calcoli per fare sta cosa in 8 pagine sul remarkable
+		y_freccia = ( y_b - y_a ) * r / distanza + y_a;
+		x_freccia = ( y_freccia - y_a ) / ( y_b - y_a ) * ( x_b - x_a ) + x_a ;
+	}
 	//cout << "x_freccia " << x_freccia << " y_freccia " << y_freccia << endl;
 	triangolo.setPosition(x_freccia, y_freccia);
 

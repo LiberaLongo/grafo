@@ -1,7 +1,7 @@
 #include "../header/inputOutputGrafo.hpp"
 
 Grafo inputGrafo(string fileName) {
-	cout << "\ninizio lettura file";
+	//cout << "\ninizio lettura file";
 	//input from file
 	bool finito = false;
 	ifstream fin(fileName);
@@ -44,7 +44,7 @@ Grafo inputGrafo(string fileName) {
 		grafo.insertArco(idFrom, idTO);
 		fin >> lettura; //lettura di freccia o di parentesi quadra chiusa
 	}
-	cout << "\nfine lettura file\n";
+	//cout << "\nfine lettura file\n";
 	return grafo;
 }
 void outputGrafo(string fileName, Grafo grafo) {
