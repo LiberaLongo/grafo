@@ -60,7 +60,7 @@ bool Arco::confronto(Arco arco) {
 	//perchè il compilatore si arrabbia
 }
 //disegna
-void Arco::draw(sf::RenderWindow &window) {
+void Arco::draw(sf::RenderWindow &window, const sf::Font font) {
 	//centro iniziale della figura prima di fare setPosition
 	float x = 0.f, y = 0.f; //centro: (0,0)
 	float size = this->fromA.getSize();

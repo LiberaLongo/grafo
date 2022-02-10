@@ -48,8 +48,10 @@ public:
 	void print(void);
 	//per trovarlo in una lista
 	bool confronto(Nodo nodo);
+	//controlla id se ha cliccato il nodo, ritorna 0 altrimenti
+	int haCliccato(Punto p);
 	//disegna
-	void draw(sf::RenderWindow &window);
+	void draw(sf::RenderWindow &window, const sf::Font font);
 };
 
 Nodo inputNodo(string vettore[]);

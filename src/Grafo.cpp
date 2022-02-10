@@ -17,7 +17,7 @@ void Grafo::insertArco(Arco arco) {
 void Grafo::insertArco(int idFrom, int idTO) {
 	struct Elem<Nodo> *posFrom = this->nodi.searchID(idFrom);
 	struct Elem<Nodo> *posTO = this->nodi.searchID(idTO);
-		if(posFrom != nullptr && posTO != nullptr) {
+	if(posFrom != nullptr && posTO != nullptr) {
 		Nodo nodoFrom = this->nodi.read(posFrom);
 		Nodo nodoTO = this->nodi.read(posTO);
 		Arco nuovoArco = Arco(nodoFrom, nodoTO);
@@ -40,6 +40,28 @@ Arco* Grafo::removeArco(Arco arco) {
 	// else
 		return nullptr;
 }
+
+//controlla se ha cliccato un nodo, ritorna 0 altrimenti
+int Grafo::haCliccato(Punto p) {
+	//cout << " ";
+	if (!(this->nodi.empty()))
+	{
+		//primo elemento utile non la sentinella
+		struct Elem<Nodo> *iter = this->nodi.head();
+		//se non vuota e non finita
+		while (!(this->nodi.finished(iter)))
+		{
+			Nodo controllato = this->nodi.read(iter);
+			int id = controllato.haCliccato(p);
+			if(id != 0)
+				return id;
+			//passo al successivo
+			iter = this->nodi.next(iter);
+		}
+	}
+	return 0;
+}
+
 //stampa
 string Grafo::toString(){
 	string res = "Grafo:\n";
@@ -51,7 +73,7 @@ void Grafo::print(){
 	cout << endl << this->toString();
 }
 //disegna
-void Grafo::draw(sf::RenderWindow &window){
-	this->archi.draw(window);
-	this->nodi.draw(window);
+void Grafo::draw(sf::RenderWindow &window, const sf::Font font ){
+	this->archi.draw(window, font);
+	this->nodi.draw(window, font);
 }

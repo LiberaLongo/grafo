@@ -32,10 +32,13 @@ public:
 	Nodo* removeNodo(Nodo nodo);
 	//rimuove un arco dalla lista degli archi e lo restituisce, NULL altrimenti
 	Arco* removeArco(Arco arco);
+	//controlla se ha cliccato un nodo, ritorna 0 altrimenti
+	int haCliccato(Punto p);
 	//stampa
 	string toString();
 	void print();
-	void draw(sf::RenderWindow &window);
+	void draw(sf::RenderWindow &window, const sf::Font font);
+	
 };
 
 #endif

@@ -36,7 +36,7 @@ public:
 	//per trovarlo in una lista
 	bool confronto(Arco arco);
 	//disegna
-	void draw(sf::RenderWindow &window);
+	void draw(sf::RenderWindow &window, const sf::Font font );
 };
 
 void inputArco(string vettore[], int &idFrom, int &idTO);

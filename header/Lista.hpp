@@ -23,6 +23,6 @@ public:
 	void print(void);
 	
 	//disegna elementi
-	void draw(sf::RenderWindow &window);
+	void draw(sf::RenderWindow &window, const sf::Font font);
 };
 #endif //LISTA_HPP

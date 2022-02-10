@@ -4,6 +4,5 @@ Lista:[
 Nodo: S id: 1 disegnato_nel_punto( 100.000000 , 300.000000 ) --> 
 Nodo: T id: 2 disegnato_nel_punto( 1100.000000 , 300.000000 ) ]
 Archi: 
-Lista:[ 
-Arco:( 1 --> 2 ) ]
+Lista:[  ]
 

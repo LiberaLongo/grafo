@@ -95,16 +95,20 @@ void Nodo::print(void) {
 bool Nodo::confronto(Nodo nodo) {
 	return this->id == nodo.getID();
 }
-//disegna
-void Nodo::draw(sf::RenderWindow &window) {
-	//testo e font
-	sf::Font Font;
-	sf::Text testo;
-	if (!Font.loadFromFile("verdanab.ttf"))
-	{
-		std::cerr << "Error loading verdanab.ttf" << std::endl;
+//controlla id se ha cliccato il nodo, ritorna 0 altrimenti
+int Nodo::haCliccato(Punto p) {
+	if(this->centro.distance(p) <= this->size) {
+		//cout << "si";
+		return this->id;
 	}
-	testo.setFont(Font);
+	//cout << "no";
+	return 0;
+}
+//disegna
+void Nodo::draw(sf::RenderWindow &window, const sf::Font font) {
+	//testo
+	sf::Text testo;
+	testo.setFont(font);
 	testo.setCharacterSize(this->size);
 	testo.setString(this->name);
 	float x_testo = this->centro.getX() - this->size / 2;
@@ -124,4 +128,5 @@ void Nodo::draw(sf::RenderWindow &window) {
 	cerchio.setOutlineColor(sf::Color::White);
 	window.draw(cerchio);
 	window.draw(testo);
+
 }

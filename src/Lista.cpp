@@ -86,7 +86,7 @@ void Lista<Tipo>::print(void) {
 }
 //disegna elementi
 template <typename Tipo>
-void Lista<Tipo>::draw(sf::RenderWindow &window)
+void Lista<Tipo>::draw(sf::RenderWindow &window, const sf::Font font)
 {
 	if (!(this->empty()))
 	{
@@ -96,7 +96,7 @@ void Lista<Tipo>::draw(sf::RenderWindow &window)
 		while (!(this->finished(iter)))
 		{
 			Tipo disegnato = this->read(iter);
-			disegnato.draw(window);
+			disegnato.draw(window, font);
 			//passo al successivo
 			iter = this->next(iter);
 		}

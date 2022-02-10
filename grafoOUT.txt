@@ -1,0 +1,14 @@
+Grafo:
+Nodi: 
+Lista:[ 
+Nodo: S id: 1 disegnato_nel_punto( 100.000000 , 300.000000 ) --> 
+Nodo: T id: 2 disegnato_nel_punto( 1100.000000 , 300.000000 ) --> 
+Nodo: 1 id: 3 disegnato_nel_punto( 498.000000 , 460.000000 ) --> 
+Nodo: 2 id: 4 disegnato_nel_punto( 538.000000 , 129.000000 ) ]
+Archi: 
+Lista:[ 
+Arco:( 1 --> 2 ) --> 
+Arco:( 1 --> 4 ) --> 
+Arco:( 4 --> 3 ) --> 
+Arco:( 3 --> 2 ) ]
+
