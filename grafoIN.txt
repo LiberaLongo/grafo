@@ -1,15 +1,9 @@
 Grafo:
 Nodi: 
 Lista:[ 
-Nodo: A id: 1 disegnato_nel_punto( 100.000000 , 100.000000 ) --> 
-Nodo: B id: 2 disegnato_nel_punto( 100.000000 , 300.000000 ) --> 
-Nodo: C id: 3 disegnato_nel_punto( 300.000000 , 100.000000 ) --> 
-Nodo: D id: 4 disegnato_nel_punto( 300.000000 , 300.000000 ) -->
-Nodo: E id: 5 disegnato_nel_punto( 500.000000 , 500.000000 ) ]
+Nodo: A id: 1 disegnato_nel_punto( 100.000000 , 200.000000 ) --> 
+Nodo: B id: 2 disegnato_nel_punto( 600.000000 , 200.000000 ) ]
 Archi: 
 Lista:[ 
-Arco:( 1 --> 2 ) --> 
-Arco:( 1 --> 3 ) --> 
-Arco:( 2 --> 3 ) -->
-Arco:( 4 --> 5 ) ]
+Arco:( 1 --> 2 ) ]
 

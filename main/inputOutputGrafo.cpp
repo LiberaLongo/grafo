@@ -19,13 +19,16 @@ Grafo inputGrafo(string fileName) {
 	if(vettoreStringhe[2] != "Lista:[") cout << "errore lista";
 	//lettura all'interno della lista dei nodi
 	while(lettura != "]") {
-		for(int i = 0; i < 9 ; i++) {
+		for(int i = 0; i < 9 && lettura != "]" ; i++) {
 			fin >> lettura;
+			if(lettura == "]") break;
 			vettoreStringhe[i] = lettura;
 		}
-		Nodo newNodo = inputNodo(vettoreStringhe);
-		grafo.insertNodo(newNodo);
-		fin >> lettura; //lettura di freccia o di parentesi quadra chiusa
+		if(vettoreStringhe[0] == "Nodo:") {
+			Nodo newNodo = inputNodo(vettoreStringhe);
+			grafo.insertNodo(newNodo);
+			fin >> lettura; //lettura di freccia o di parentesi quadra chiusa
+		}
 	}
 	//lettura in mezzo alla lista di nodi e archi
 	fin >> lettura;
@@ -33,16 +36,18 @@ Grafo inputGrafo(string fileName) {
 	fin >> lettura;
 	if(lettura != "Lista:[") cout << "errore lista";
 	//lettura all'interno della lista degli archi
-	while(lettura != "]") {
-		for(int i = 0; i < 5 ; i++) {
+	while(lettura != "]" ) {
+		for(int i = 0; i < 5 && lettura != "]" ; i++) {
 			fin >> lettura;
 			vettoreStringhe[i] = lettura;
 		}
-		int idFrom, idTO;
-		inputArco(vettoreStringhe, idFrom, idTO);
-		// cout << "id" << idFrom << idTO;
-		grafo.insertArco(idFrom, idTO);
-		fin >> lettura; //lettura di freccia o di parentesi quadra chiusa
+		if(vettoreStringhe[0] == "Arco:(") {
+			int idFrom, idTO;
+			inputArco(vettoreStringhe, idFrom, idTO);
+			// cout << "id" << idFrom << idTO;
+			grafo.insertArco(idFrom, idTO);
+			fin >> lettura; //lettura di freccia o di parentesi quadra chiusa
+		}
 	}
 	//cout << "\nfine lettura file\n";
 	return grafo;
