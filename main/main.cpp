@@ -11,7 +11,6 @@ int main() {
 	// grafo.insertNodo(B);
 	// grafo.insertArco(Arco(A, B));
 	grafo.print();
-	outputGrafo("grafoOUT.txt", grafo);
 	window(grafo);
 	cout << endl;
 	return 0;

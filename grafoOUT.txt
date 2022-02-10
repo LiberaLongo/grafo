@@ -1,9 +1,0 @@
-Grafo:
-Nodi: 
-Lista:[ 
-Nodo: A id: 1 disegnato_nel_punto( 100.000000 , 200.000000 ) --> 
-Nodo: B id: 2 disegnato_nel_punto( 600.000000 , 200.000000 ) ]
-Archi: 
-Lista:[ 
-Arco:( 1 --> 2 ) ]
-
